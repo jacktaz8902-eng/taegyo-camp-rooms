@@ -81,9 +81,9 @@ input[type="search"]::-webkit-search-cancel-button{display:none}
 .state{border:1px solid var(--line);border-radius:8px;padding:40px 20px;text-align:center;color:var(--ink-3);font-size:14px;font-weight:300;background:var(--card-2);word-break:keep-all}
 .state strong{display:block;font-weight:500;font-size:15px;color:var(--ink-2);margin-bottom:5px}
 .count{margin:0;font-size:12.5px;color:var(--ink-3)}
-.row{display:grid;grid-template-columns:96px 1fr;background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}
+.row{display:grid;grid-template-columns:116px 1fr;background:var(--card);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);overflow:hidden}
 .room{background:var(--accent-wash);border-right:1px solid var(--line);display:flex;align-items:baseline;justify-content:center;align-content:center;flex-wrap:wrap;padding:22px 8px;gap:2px}
-.room .num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:36px;line-height:1;color:var(--accent)}
+.room .num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:30px;line-height:1;color:var(--accent);letter-spacing:-.02em}
 .room .unit{font-size:15px;font-weight:500;color:var(--accent)}
 .who{padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
 .who .nm{margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.3}
@@ -126,9 +126,9 @@ summary{min-height:48px}
   input[type="search"]{font-size:18px;padding:15px 0}
   .results{min-height:0}
   .state{padding:30px 16px}
-  .row{grid-template-columns:84px 1fr}
+  .row{grid-template-columns:104px 1fr}
   .room{padding:20px 6px}
-  .room .num{font-size:32px}
+  .room .num{font-size:27px}
   .who{padding:16px}
   .who .nm{font-size:21px}
   .who .mate{font-size:14px}
@@ -168,7 +168,7 @@ summary{min-height:48px}
         <input id="q" type="search" enterkeyhint="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="성함을 입력하세요">
         <button class="clear" id="clear" type="button" aria-label="지우기">✕</button>
       </div>
-      <p class="hint">초성(<code>ㄱㅈㅎ</code>)이나 호수(<code>5호</code>)로도 검색됩니다.</p>
+      <p class="hint">초성(<code>ㄱㅈㅎ</code>)이나 호실 번호(<code>8047</code>)로도 검색됩니다.</p>
     </section>
 
     <section class="results" id="results" aria-live="polite"></section>
@@ -180,13 +180,13 @@ summary{min-height:48px}
   </div>
 
   <footer>
-    호수는 <b>임시 번호</b>입니다. 숙소 루밍리스트가 확정되면 실제 호실로 바뀝니다.<br>
+    호실은 <b>숙소 루밍리스트(10.13)</b> 기준입니다. 배정이 다르면 운영진에게 알려 주세요.<br>
     개인정보 보호를 위해 이름과 호수 외의 정보는 담지 않았습니다.
   </footer>
 </div>
 
 <script>
-const BLOB = {"s":"l7SinDkuALebeW3ssS7UYA==","i":"+YdJoDa4N0V4nbPzcGDt/Q==","c":"JxMUC0JJ5hI0IiAVGcBlJM1ZtkVwU4t7fKInQz90AA4FBcjnn2HkRSB9seB2BFcsH+lRjLZE2bhb6pBNw1jQ3QLQiwhL2dSRTqK5Wnv5tmZhHBcLEsXeU+I8TmtHk55onXRoOFJsNWOq2dKt+y7AkGYU3Z6p51r14aZLCbnZSEUJNSOyqCrPK1iTux0u8BkuFfHvVcFcSPToaZDF33DnBEnwummRuyD5Evl4CWBzHOv5Q/9qkXZQNjxkVb79n0gNK1S1bsvkSmzL0RWtCmO0kHib4muIwvoo0Fg7NFs5LGoOjqVEO7xb56BmnSf1MKPovnRGG3z3vFQmp8au2/jPot6ctWwiooZDmZqqg2UQ04n7B7OApupc2KQYZsMWJ2XcOtq0nf+TswTkWOfec52QIyVQqWR3oQA1W566tyqhZ9FJKxWOcBU89Glew1gtRxi05kNo1f7+e6pAok9nwrzcsLfJJROeq9zUwCohmwSA0BZ2PSrs43rxGjqhmF03Rrka4wKuTop+8Hbn2VS9HvB9FFCodv7MeQrUMArHbGvrFDC/RhSlxDQ8tSbuBDwwgtdfey82bW2cTy/MKnFpXf2JfbSe4jLrH1gICHNhVbK6AWq2ty3ZDgtvD7p0avTMB125ZxgIdqYEeazXlqa5+uSOUTs0pXmyPRBjzAyHqmBCuE4DCkpRZc3sZPQBBCa3f5gu4xJ0VH+9sDbeMIMSflyIAjewycJXExJP0uhXA9bgnN6c8AoL/6Z7cDdReYlYGd3GMbBNCpYYjYRtUyLPadLKPwVEpm5iiWxPCA+NWs+Yz5zFdayt2gBhqI8UHXhGVrD+Ro0y26rVhzi4ULPZWRQgwLPr3Zof+yus9ExPK4lRLNsNkk0owE0ehEDqNdQHcJk3FbEZKYXL0MOhetRRtv0y5S+Hp6OLiWKyfKSv5x1bxPWyp4US2M5pm9hakWIaSuOG32UbVTj3BTkgNHmXBg4uQw=="};
+const BLOB = {"s":"OJvnTtkvHaZ+c2NTVaKHBg==","i":"yoT2ws3rWZ+OgDRwEUElLQ==","c":"WpVtT5hHunLXYjBp7uU3PTXpbZ4jR9rm/p3lpT++t7ykOcb9FaYlDOTHzNUEEV3/i1Uwk5Ac2j4SJJIHMw4IXfRBpx3U5USNh9QyeYtJT2Y+jfKzMjsDR2U7iMcGFhBK1hHc03ghTcqyEdy2h5x8zY4WqKWZorGbsw67JOOla8LE/rk482G782BznYtoBUZ4FzvADq5bcwxScXnvZ98HoGcLgzpoNPdu0sX3S+18pXHcbbwEipS6nSxHNZZC6iLD6/ddwmgHb+tgGujUzR7roxJs4p2tw454c3YJKZmlg35NNyj4r92hvxUqHlZYljmGfHvcAjY/OcqhRnyG1mNDLkMngZ8E61/bpo/B+Cb325bgJUWPedfFcdezn1Vdc3LNWHaC4PMEaXtYufhRZq6RzrztD1cDuSWFuGRW7s1S2YFat+a6BE37yWVQ7s+q9xIq58g9YexmIsqYgsYIIozUG0wPqRTLhqbqbTeoh5jzt3UaqNIC5G8s0jFODGyWBJsfHBO/sMR6bAg2VYVnR2YM1mdCNKO9wB0bnYkkA9rnZ6BIJvEj0NNGdLSybJsDoYiiQQy6RhZXdiv0gtE6dl4a/tQ9yC9P+PeJgagTEC7U4CHeAlbyfz4aRuuzCHWLJCQGB9ikZM7p4OSi5ASCyJpS64XouPA7RXKW4Irt7M+eZOLuH5xkbQgIb/KSoEIO5/j3mAuyN1E+Rszno78P6wAVjb9VjW4jSTeWlyI5HhU/5v/6DZ6Gf4Cz7OdWKvHb+B1il6PVk471xIDDkEG1QcZoTrp8tvOkGO69YpFPSh9rPEcOJI9soVJdWt4Cd+6+XiTTPHMFmO+2OTrDon35gFQfwcuyXhVGk6t5lEhrXhT2bzjffVxhV5q/xOUN1OyjooQ/8Yyec1rrTlqKuc1XCvEnhq4GnuDh3CWUeR/fXBpyexejq+Cj0Uv98MhRhF2pmkixq23UxpjFLswGsG/hbJiZYNLbpbl7xwEYTyWVxas1AFPkkj4yw4iRrnYWzYgtg+xvGQ5SwzpQLx6+uWAZcC2dxg=="};
 const KEY = "taegyo-pin";
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 
@@ -255,13 +255,13 @@ function start(rooms){
       resultsEl.innerHTML = '<div class="state"><strong>이름을 입력해 주세요</strong>배정된 호수가 바로 표시됩니다.</div>';
       return;
     }
-    const rm = q.match(/^(\d{1,3})(호실?)?$/);
+    const rm = q.match(/^(\d{1,4})(호실?)?$/);
     if (rm){
       const n = Number(rm[1]);
       const hits = people.filter(p => p.r === n);
       resultsEl.innerHTML = hits.length
         ? '<p class="count">' + n + "호 · " + hits.length + "명</p>" + hits.map(p => row(p, "")).join("")
-        : '<div class="state"><strong>' + n + '호는 없습니다</strong>1호부터 ' + rooms.length + "호까지 있습니다.</div>";
+        : '<div class="state"><strong>' + n + '호는 조회할 수 없습니다</strong>호실 번호를 다시 확인해 주세요.</div>";
       return;
     }
     const hits = people.filter(p => isCho(q) ? toCho(p.n).includes(q) : p.n.includes(q));
