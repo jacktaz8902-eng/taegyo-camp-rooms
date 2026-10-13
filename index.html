@@ -261,7 +261,7 @@ function start(rooms){
       const hits = people.filter(p => p.r === n);
       resultsEl.innerHTML = hits.length
         ? '<p class="count">' + n + "호 · " + hits.length + "명</p>" + hits.map(p => row(p, "")).join("")
-        : '<div class="state"><strong>' + n + '호는 조회할 수 없습니다</strong>호실 번호를 다시 확인해 주세요.</div>";
+        : '<div class="state"><strong>' + n + '호는 조회할 수 없습니다</strong>호실 번호를 다시 확인해 주세요.</div>';
       return;
     }
     const hits = people.filter(p => isCho(q) ? toCho(p.n).includes(q) : p.n.includes(q));
